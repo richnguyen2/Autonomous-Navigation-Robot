@@ -4,7 +4,6 @@
 #include "navigation_controller.h"
 #include "motor_test.h"
 
-constexpr int TASK_PERIOD_MS = 20;
 int lastExecutionTime = 0;
 
 int delayTime = 1000;
