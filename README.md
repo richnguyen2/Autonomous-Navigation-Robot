@@ -1,9 +1,5 @@
 # Autonomous Mobile Robot
 
-## Demo
-
-
-
 ## Overview
 
 Developed an autonomous mobile robot integrating perception, localization, path planning, and low-level motion control. The system combines stereo vision for object detection and depth estimation, a discrete Bayes filter for robot localization, and closed-loop motor control for executing motion commands.
@@ -31,6 +27,9 @@ localization, planning, and motor control.
 ```
 
 ## Key Components - Robot/
+
+## Demo
+
 
 ### Perception — Object Detection & Depth Estimation
 - Detected landmarks using SIFT feature matching and homography-based image transformation
