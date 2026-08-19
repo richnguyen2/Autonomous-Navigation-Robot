@@ -186,6 +186,7 @@ const MapPage = () => {
                     <>
                         <ReactFlow
                             nodes={combinedNodes}
+                            // edges={pathData.edges}
                             nodeTypes={nodeTypes}
                             nodesConnectable={false}
                             onPaneClick={() => {

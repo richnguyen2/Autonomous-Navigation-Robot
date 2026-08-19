@@ -2,6 +2,7 @@
 from typing import Optional
 from app.models import Robot, Task, Edge, Node
 from app.utils.astar import run_astar_grid
+from app.utils.get_commands_from_path import get_commands_from_path
 from app.schemas.path import PathResponseSchema
 from app.schemas.response import ResponseSchema
 from app.schemas.robot import RobotUpdate
@@ -50,7 +51,7 @@ async def update_robot(robot_update: RobotUpdate, session: SessionDep) -> Option
     """Updates the robots location"""
     robot = session.exec(select(Robot).where(Robot.name == "Bot-01")).first()
     if not robot:
-        raise HTTPException(status_code=404, detail="Virtual simulation robot asset not found.")
+        raise HTTPException(status_code=404, detail="Robot asset not found.")
 
     update_data = robot_update.model_dump(exclude_unset=True)
 
@@ -90,6 +91,8 @@ async def get_robot_active_path(session: SessionDep):
     nodes_lookup = {n.id: n for n in session.exec(select(Node).where(Node.id.in_(node_id_sequence))).all()}
     ordered_path_nodes = [nodes_lookup[node_id] for node_id in node_id_sequence if node_id in nodes_lookup]
 
+    commands = get_commands_from_path(session, ordered_path_nodes)
+    # print("Generated Commands:", commands)
     ordered_path_edges = []
     for i in range(len(node_id_sequence) - 1):
         u = node_id_sequence[i]
@@ -105,6 +108,7 @@ async def get_robot_active_path(session: SessionDep):
     return {
         "data": {
             "nodes": ordered_path_nodes,
-            "edges": ordered_path_edges
+            "edges": ordered_path_edges,
+            "commands": commands
         }
     }

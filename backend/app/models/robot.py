@@ -8,6 +8,7 @@ class Robot(SQLModel, table=True):
     status: str = Field(default="idle") # idle, routing, working
     
     current_node_id: int = Field(foreign_key="node.id", nullable=False)
+    current_heading: Optional[str] = Field(default=None) # NORTH, SOUTH, EAST, WEST
     
     current_task_id: Optional[int] = Field(default=None, foreign_key="task.id")
 
