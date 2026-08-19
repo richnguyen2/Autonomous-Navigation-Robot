@@ -29,7 +29,7 @@ Developed an autonomous mobile robot integrating perception, localization, path 
 Perception → Localization → Path Planning → Motion Control → Robot
 
 ## Demo
-
+[![Autonomous Mobile Robot Demo](https://img.youtube.com/vi/_fA21aL-42g/hqdefault.jpg)](https://www.youtube.com/watch?v=_fA21aL-42g)
 
 ### Perception — Object Detection & Depth Estimation
 - Detected landmarks using SIFT feature matching and homography-based image transformation
