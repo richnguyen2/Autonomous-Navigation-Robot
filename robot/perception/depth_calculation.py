@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import pickle
-from feature_detection import box_measure, box_measure_sift
+from feature_detection import box_measure_sift
 
 def stereo_vision_depth_calculation(image_left, image_right, camera_baseline, landmark, tolerance = 1e-6):
     left_frame = cv2.cvtColor(image_left, cv2.COLOR_BGR2GRAY)
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     #cv2.imshow("img0", left_frame)
     #cv2.imshow("img1", right_frame)
     #cv2.imshow("land", landmark)
-    print("grayFrame:", right_frame.shape)
-    print("template:", landmark.shape)
+    #print("grayFrame:", right_frame.shape)
+    #print("template:", landmark.shape)
     #cv2.waitKey(0)
     stereo_vision_depth_calculation(rectified_L, rectified_R, baseline, landmark)
