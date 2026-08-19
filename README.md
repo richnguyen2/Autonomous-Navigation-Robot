@@ -25,7 +25,7 @@ Perception → Localization → Path Planning → Motion Control → Robot
 
 ### Low-Level Motion Control
 - Implemented closed-loop control for differential-drive motion
-- Used IMU feedback to reduce heading error during straight-line motion
+- Used IMU feedback to reduce heading error during straight-line motion and turning
 - Controlled motor commands for forward motion and turning
 
 ### Frontend & Backend
