@@ -34,10 +34,11 @@ Perception → Localization → Path Planning → Motion Control → Robot
 
 ## Repository Structure
 
+```text
 mobile-robot-maid/
-├── frontend/
-├── backend/
-├── robot/
+├── frontend/    # Web interface
+├── backend/     # API server
+└── robot/       # Robot software
 
 frontend/
 Web interface for monitoring robot status and sending commands.
