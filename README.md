@@ -47,10 +47,6 @@ localization, planning, and motor control.
 - Used IMU feedback to reduce heading error during straight-line motion and turning
 - Controlled motor commands for forward motion and turning
 
-### Frontend & Backend
-- Web interface for monitoring robot status and interacting with the robot
-- Backend API for communication between the frontend and robot
-
 ## Team
 
 Kevin Nguyen, Richard Nguyen
