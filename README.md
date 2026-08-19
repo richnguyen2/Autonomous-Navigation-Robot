@@ -1,12 +1,5 @@
 # Autonomous Mobile Robot
 
-## Overview
-
-Developed an autonomous mobile robot integrating perception, localization, path planning, and low-level motion control. The system combines stereo vision for object detection and depth estimation, a discrete Bayes filter for robot localization, and closed-loop motor control for executing motion commands.
-
-**System Architecture:**  
-Perception → Localization → Path Planning → Motion Control → Robot
-
 ## Repository Structure
 
 ```text
@@ -27,6 +20,13 @@ localization, planning, and motor control.
 ```
 
 ## Key Components - Robot/
+
+## Overview
+
+Developed an autonomous mobile robot integrating perception, localization, path planning, and low-level motion control. The system combines stereo vision for object detection and depth estimation, a discrete Bayes filter for robot localization, and closed-loop motor control for executing motion commands.
+
+**System Architecture:**  
+Perception → Localization → Path Planning → Motion Control → Robot
 
 ## Demo
 
