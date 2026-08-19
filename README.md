@@ -13,7 +13,7 @@ Perception → Localization → Path Planning → Motion Control → Robot
 
 ## Key Components
 
-### Stereo Vision — Object Detection & Depth Estimation
+### Perception — Object Detection & Depth Estimation
 - Detected landmarks using SIFT feature matching and homography-based image transformation
 - Rectified stereo camera views to align corresponding points horizontally
 - Estimated object depth using stereo disparity
