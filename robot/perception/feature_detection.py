@@ -1,3 +1,5 @@
+# Script to find the landmark/object
+
 import cv2
 import numpy as np
 
@@ -21,6 +23,7 @@ def imageTransformation(matches, kp1, kp2, template):
         src_pts = np.float32([kp1[m.queryIdx].pt for m in good ]).reshape(-1,1,2)
         dst_pts = np.float32([kp2[m.trainIdx].pt for m in good ]).reshape(-1,1,2)
 
+        # Get Homogenous matrix transformation between the template and actual image
         M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC,5.0)
 
         # Map the template corners
@@ -37,7 +40,8 @@ def imageTransformation(matches, kp1, kp2, template):
     
     return dst
 
-# Detect Object and return ROI
+################# Detect Object and return ROI #####################
+
 def templateMatch(grayFrame, template, method = cv2.TM_CCOEFF_NORMED):
     h, w = template.shape
     res = cv2.matchTemplate(grayFrame, template, method)
@@ -58,6 +62,8 @@ def siftMatch(grayFrame, template):
     
     return dst
 
+
+################# Get Centroid and draw Bounding Box #####################
 
 # Get centroid of detected object using template matching
 def box_measure_template(grayFrame, template, threshold=.9):
@@ -83,6 +89,7 @@ def box_measure_sift(grayFrame, template):
         cx = centroid[0]
         cy = centroid[1]
         cv2.polylines(grayFrame,[np.int32(dst)],True, blue, lineW, cv2.LINE_AA)
+        cv2.circle(grayFrame, (int(cx), int(cy)), 8, blue, 2)
         cv2.imshow("img", grayFrame)
         cv2.waitKey(0)
         return cx, cy
