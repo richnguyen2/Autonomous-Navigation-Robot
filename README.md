@@ -11,7 +11,26 @@ Developed an autonomous mobile robot integrating perception, localization, path 
 **System Architecture:**  
 Perception → Localization → Path Planning → Motion Control → Robot
 
-## Key Components
+## Repository Structure
+
+```text
+mobile-robot-maid/
+├── frontend/    # Web interface
+├── backend/     # API server
+└── robot/       # Robot software
+
+frontend/
+Web interface for monitoring robot status and sending commands.
+
+backend/
+API server responsible for communication between the frontend and robot.
+
+robot/
+Software running on the Raspberry Pi and Arduino that handles perception,
+localization, planning, and motor control.
+```
+
+## Key Components - Robot/
 
 ### Perception — Object Detection & Depth Estimation
 - Detected landmarks using SIFT feature matching and homography-based image transformation
@@ -31,24 +50,6 @@ Perception → Localization → Path Planning → Motion Control → Robot
 ### Frontend & Backend
 - Web interface for monitoring robot status and interacting with the robot
 - Backend API for communication between the frontend and robot
-
-## Repository Structure
-
-```text
-mobile-robot-maid/
-├── frontend/    # Web interface
-├── backend/     # API server
-└── robot/       # Robot software
-
-frontend/
-Web interface for monitoring robot status and sending commands.
-
-backend/
-API server responsible for communication between the frontend and robot.
-
-robot/
-Software running on the Raspberry Pi and Arduino that handles perception,
-localization, planning, and motor control.
 
 ## Team
 
